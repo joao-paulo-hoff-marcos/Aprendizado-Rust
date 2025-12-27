@@ -1,3 +1,5 @@
+mod p1000;
+
 fn main() {
-    println!("Hello, world!");
+    p1000::main();
 }
