@@ -9,14 +9,13 @@
 // Saída
 // Imprima a mensagem "X = " (letra X maiúscula) seguido pelo valor da variável X e pelo final de linha. Cuide para que tenha um espaço antes e depois do sinal de igualdade, conforme o exemplo abaixo.
 
+fn get_num() -> i32 {
+    let mut x = String::new();
+    std::io::stdin().read_line(&mut x).expect("falha ao ler entrada");
+    return x.trim().parse().expect("Número Inválido");
+}
+
 pub fn main() {
-    let mut x1 = String::new();
-    std::io::stdin().read_line(&mut x1).expect("falha ao ler entrada");
-    let mut x2 = String::new();
-    std::io::stdin().read_line(&mut x2).expect("Falha 2");
-    let x3: i32 = x1.trim().parse().expect("Número Inválido");
-    let x4: i32 = x2.trim().parse().expect("sem numero");
-    let x = x3 + x4;
-    // println!("{x}");
+    let x = get_num() + get_num();
     println!("X = {}", x);
 }
